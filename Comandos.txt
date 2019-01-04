@@ -29,6 +29,7 @@ Dar commit
 git commit -> dá um commit, descreva o que aconteceu
 git commit - m "Título do commit" -> cria o commit com a descrição
 git commit --global core.editor nome-do-editor
+git commit --amend -> altera o último commmit
 
 Status do repositório
 git status -> vê status do repositório
@@ -54,6 +55,7 @@ git diff <commit> <outro commit> -> compara um commit com o outro
 Navegar no histórico
 git checkout <código do commit> -> volta no estado daquele commit
 git checkout master -> volta para o último commit da master
+git show <commit> -> mostra uma descrição do commit
 
 Conflitos
 -> Dê um push, resolva os conflitos e dê um commit
@@ -70,3 +72,27 @@ Tag
 git tag [nome da tag] -> cria uma tag que aponta para o commit naquele ponto
 git push <remote> <tag> -> envia a tag
 git checkout <tag> -> volta para aquele estado da tag
+
+.gitignore
+Arquivos com os nomes e pastas dos arquivos que ele deve ignorar
+Ex: arquivo
+pasta/
+**/*.css -> qualquer arquivo com o final .css vai ser ignorado
+
+Stash
+-> Guarda as alterações sem dar commit. Ideal para mudar de branch caso necessário
+git stash -> guarda as alterações
+git stash list -> mostra a pilha de stash
+git stash pop -> retira o último stash
+
+CherryPick
+-> Joga o commit na branch
+git cherry-pick <commit>
+
+Blame
+git blame <arquivo> -> mostra as alterações por linha
+
+Bisect
+-> faz uma busca binária para encontrar
+Passos
+git bisect start -> inicia a busca
