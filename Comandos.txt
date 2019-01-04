@@ -1,4 +1,4 @@
-Criar chave SSH e inserí-la no GitHub-> Vê no tutorial do Git
+Criar chave SSH e inserí-la no GitHub -> Vê no tutorial do Git
 Dica 1: você não precisa de inserir uma senha, dê só Enter
 Dica 2: Coloque os usuários e e-mails iguais ao do Git para facilitar
 
@@ -19,6 +19,12 @@ Adicionar arquivo ou alterações ao git
 git add Arquivo -> Adiciona os arquivos
 git add . -> Adiciona todos os arquivos
 
+Remover alterações
+git checkout -- <arquivos> -> remove as mudanças que não foram para o commit
+git revert <commit> -> cria um novo commit para apagar alterações do commit
+git reset --hard <commit> -> apaga todas as alterações até o commit
+git reset HEAD~1 -> remove os commits mas mantém as alterações
+
 Dar commit
 git commit -> dá um commit, descreva o que aconteceu
 git commit - m "Título do commit" -> cria o commit com a descrição
@@ -37,11 +43,30 @@ git config --global push.default simple -> mandará todas as branchs
 git config --global push.default matching -> mandará só a branch atual
 
 Receber commits do repositório remoto
-git pull -> recebe os commits
+git pull -> recebe os commits e aplica no repositório
+git fetch -> recebe os commits e não aplica no repositório. Dê um git rebase e faça as mudanças e depois dê um git rebase --continue
 
 Mostrar as diferenças de um commit
 git diff HEAD~1 -> mostra as mudanças do commit contando a partir do último, nesse caso ele mostra as mudanças do último commit
+git diff -> mostra as alterações que não foram para o commit
+git diff <commit> <outro commit> -> compara um commit com o outro
 
 Navegar no histórico
 git checkout <código do commit> -> volta no estado daquele commit
 git checkout master -> volta para o último commit da master
+
+Conflitos
+-> Dê um push, resolva os conflitos e dê um commit
+
+Branch
+git branch -> mostra as branchs
+git branch <nome-branch> -> cria uma nova branch
+git checkout <branch> -> volta para o último commit da branch
+git merge <branch> -> aplica os commits de uma branch na branch atual e dá um merge no final
+git rebase <branch> -> ele é parecido com merge mas não dá merge, ele pega os commits da outra branch, insere na branch atual, depois coloca os commits da atual um por um e vai corrigindo
+git rebase --continue -> encerra as mudanças do rebase
+
+Tag
+git tag [nome da tag] -> cria uma tag que aponta para o commit naquele ponto
+git push <remote> <tag> -> envia a tag
+git checkout <tag> -> volta para aquele estado da tag
