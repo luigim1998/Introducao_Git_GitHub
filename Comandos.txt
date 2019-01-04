@@ -1,0 +1,47 @@
+Criar chave SSH e inserí-la no GitHub-> Vê no tutorial do Git
+Dica 1: você não precisa de inserir uma senha, dê só Enter
+Dica 2: Coloque os usuários e e-mails iguais ao do Git para facilitar
+
+Criar repositório
+git init NomeRepositorio -> cria o repositório NomeRepositorio no diretório atual
+git init -> cria o repositorio sendo o diretório o próprio repositório
+
+Criar um repositório remoto
+-> Crie o repositório remoto e configure-o
+git remote add origin <REMOTE_URL> -> configura uma nova remote com o nome que geralmente é origin
+git remote -v -> vê as remotes (normal aparecer uma fetch e outra push)
+-> Dê um push nos arquivos
+
+Clonar repositório
+git clone <URL> -> clona o repositório no diretório
+
+Adicionar arquivo ou alterações ao git
+git add Arquivo -> Adiciona os arquivos
+git add . -> Adiciona todos os arquivos
+
+Dar commit
+git commit -> dá um commit, descreva o que aconteceu
+git commit - m "Título do commit" -> cria o commit com a descrição
+git commit --global core.editor nome-do-editor
+
+Status do repositório
+git status -> vê status do repositório
+
+Últimos commits
+git log -> vê os últimos commits
+
+Enviar commits para o repositório remoto
+git push -> manda os commits
+git push [nome-remoto] [branch] -> manda os commits da branch especificada para o remoto
+git config --global push.default simple -> mandará todas as branchs
+git config --global push.default matching -> mandará só a branch atual
+
+Receber commits do repositório remoto
+git pull -> recebe os commits
+
+Mostrar as diferenças de um commit
+git diff HEAD~1 -> mostra as mudanças do commit contando a partir do último, nesse caso ele mostra as mudanças do último commit
+
+Navegar no histórico
+git checkout <código do commit> -> volta no estado daquele commit
+git checkout master -> volta para o último commit da master
