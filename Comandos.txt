@@ -96,3 +96,7 @@ Bisect
 -> faz uma busca binária para encontrar
 Passos
 git bisect start -> inicia a busca
+
+Como não rastrear arquivos
+-> Adicione o arquivo no .gitignore (coloque '\' antes do espaço e do '.')
+-> caso esse arquivo já esteja num commit anterior, insira o comando: git rm --cached <file>
